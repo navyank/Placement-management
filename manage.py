@@ -2,9 +2,12 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import mimetypes
 
 
 def main():
+    mimetypes.init()
+    mimetypes.types_map['.css'] = 'text/css'
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'placementprjt.settings')
     try:
